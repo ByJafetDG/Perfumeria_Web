@@ -1,0 +1,110 @@
+.catalog {
+  width: 100%;
+  background: #0E0E0E;
+}
+
+/* ── Título ──────────────────────────────────────────────── */
+.catalog__header {
+  padding: 32px 24px 0;
+}
+
+.catalog__title {
+  font-family: 'Noto Serif', serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 28px;
+  color: #E5E2E1;
+  margin: 0;
+}
+
+/* ── Cuerpo ──────────────────────────────────────────────── */
+.catalog__body {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ── Grid ────────────────────────────────────────────────── */
+.catalog__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── Skeleton ────────────────────────────────────────────── */
+.catalog__skeleton {
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(90deg, #1a1a1a 25%, #222 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.4s infinite;
+}
+
+@keyframes skeletonShimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+/* ── Empty ───────────────────────────────────────────────── */
+.catalog__empty {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #D0C5AF;
+  text-align: center;
+  padding: 48px 0;
+}
+
+/* ── Paginación ──────────────────────────────────────────── */
+.catalog__pagination {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.catalog__page-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1C1B1B;
+  border: 1px solid rgba(77, 70, 53, 0.1);
+  color: #D0C5AF;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.catalog__page-btn--active {
+  background: #F2CA50;
+  border-color: #F2CA50;
+  color: #0E0E0E;
+}
+
+.catalog__page-btn:not(.catalog__page-btn--active):hover {
+  background: #232323;
+  color: #F2CA50;
+}
+
+/* ── Desktop ─────────────────────────────────────────────── */
+@media (min-width: 1024px) {
+  .catalog__header {
+    padding: 40px 48px 0;
+  }
+
+  .catalog__title {
+    font-size: 24px;
+  }
+
+  .catalog__body {
+    padding: 32px 48px 48px;
+  }
+
+  .catalog__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

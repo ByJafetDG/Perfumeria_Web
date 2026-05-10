@@ -1,0 +1,34 @@
+.admin-dashboard {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Welcome section */
+.admin-dashboard__welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-dashboard__welcome-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #D0C5AF;
+  margin: 0;
+}
+
+.admin-dashboard__welcome-title {
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -0.75px;
+  color: #E5E2E1;
+  margin: 0;
+}

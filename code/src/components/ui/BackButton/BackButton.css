@@ -1,0 +1,32 @@
+.back-btn {
+  position: fixed;
+  top: 80px; /* debajo del navbar (64px) + margen */
+  left: 20px;
+  z-index: 50;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(77, 70, 53, 0.4);
+  background: rgba(14, 14, 14, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #D0C5AF;
+
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.back-btn:hover {
+  border-color: #F2CA50;
+  color: #F2CA50;
+  background: rgba(14, 14, 14, 0.9);
+}
+
+.back-btn:active {
+  transform: scale(0.92);
+}

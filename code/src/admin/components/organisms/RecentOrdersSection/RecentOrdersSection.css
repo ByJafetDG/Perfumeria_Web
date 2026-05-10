@@ -1,0 +1,45 @@
+.recent-orders {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.recent-orders__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.recent-orders__title {
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: #E5E2E1;
+  margin: 0;
+}
+
+.recent-orders__link {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #F2CA50;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.recent-orders__list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}

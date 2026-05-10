@@ -1,0 +1,130 @@
+.orders-page {
+  width: 100%;
+  background: #0E0E0E;
+  padding-bottom: 32px;
+}
+
+.orders-page__inner {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Header ── */
+.orders-page__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+}
+
+.orders-page__title {
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: #E5E2E1;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+/* ── Search ── */
+.orders-page__search {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.orders-search__wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1C1B1B;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  padding: 0 14px;
+  height: 48px;
+}
+
+.orders-search__input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #E5E2E1;
+  letter-spacing: 0.02em;
+}
+
+.orders-search__input::placeholder {
+  color: rgba(208, 197, 175, 0.35);
+}
+
+.orders-search__btn {
+  background: #F2CA50;
+  color: #3C2F00;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.orders-search__btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.orders-search__btn:not(:disabled):hover {
+  opacity: 0.85;
+}
+
+/* ── Not found ── */
+.orders-page__not-found {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px;
+  background: #1C1B1B;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.orders-page__not-found p {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #E5E2E1;
+  margin: 0;
+}
+
+.orders-page__not-found span {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #99907C;
+  line-height: 1.5;
+}
+
+/* ── Hint ── */
+.orders-page__hint {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #99907C;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Desktop ── */
+@media (min-width: 1024px) {
+  .orders-page__inner {
+    padding: 0 48px;
+    max-width: 640px;
+  }
+}

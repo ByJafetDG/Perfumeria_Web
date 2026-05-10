@@ -1,0 +1,287 @@
+/* ── Page ──────────────────────────────────────────────────── */
+.au-page {
+  padding: 24px 20px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Header ────────────────────────────────────────────────── */
+.au-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.au-header__title {
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -0.75px;
+  text-transform: uppercase;
+  color: #E5E2E1;
+  margin: 0;
+}
+
+.au-header__search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 9px 12px 10px 28px;
+  border-bottom: 1px solid #4D4635;
+}
+
+.au-header__search-icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #D0C5AF;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.au-header__search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  color: #E5E2E1;
+  -webkit-appearance: none;
+}
+.au-header__search-input::placeholder {
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #D0C5AF;
+  font-size: 11px;
+}
+.au-header__search-input::-webkit-search-cancel-button { display: none; }
+
+/* ── Filter dropdown ───────────────────────────────────────── */
+.au-filters {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin: 0 -20px;
+  padding: 0 20px 16px;
+  border-bottom: 1px solid rgba(77, 70, 53, 0.12);
+}
+
+.au-drop {
+  position: relative;
+  flex: 1;
+}
+
+.au-drop__trigger {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #1C1B1B;
+  border: 1px solid rgba(77, 70, 53, 0.15);
+  cursor: pointer;
+  transition: border-color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.au-drop__trigger--active { border-color: rgba(242, 202, 80, 0.4); }
+.au-drop__trigger:hover   { border-color: rgba(77, 70, 53, 0.35); }
+
+.au-drop__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(208, 197, 175, 0.5);
+  white-space: nowrap;
+}
+
+.au-drop__value {
+  flex: 1;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #D0C5AF;
+  text-align: left;
+}
+.au-drop__trigger--active .au-drop__value { color: #F2CA50; }
+
+.au-drop__arrow {
+  flex-shrink: 0;
+  color: rgba(208, 197, 175, 0.5);
+  transition: transform 0.2s;
+}
+.au-drop__arrow--open { transform: rotate(180deg); }
+
+.au-drop__menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: #1C1B1B;
+  border: 1px solid rgba(77, 70, 53, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.au-drop__item {
+  padding: 12px 14px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(77, 70, 53, 0.08);
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #D0C5AF;
+  text-align: left;
+  transition: background 0.15s, color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.au-drop__item:last-child { border-bottom: none; }
+.au-drop__item:hover      { background: #232323; color: #F2CA50; }
+.au-drop__item--active    { color: #F2CA50; background: rgba(242, 202, 80, 0.06); }
+
+/* ── Count ─────────────────────────────────────────────────── */
+.au-count {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: rgba(208, 197, 175, 0.35);
+  margin: -12px 0 0;
+}
+
+/* ── List ──────────────────────────────────────────────────── */
+.au-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.au-empty {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: rgba(208, 197, 175, 0.4);
+  text-align: center;
+  padding: 48px 0;
+}
+
+/* ── User card ─────────────────────────────────────────────── */
+.au-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(77, 70, 53, 0.1);
+}
+
+.au-card--skeleton {
+  height: 64px;
+  border-bottom: none;
+  background: linear-gradient(90deg, #141414 25%, #1c1c1c 50%, #141414 75%);
+  background-size: 200% 100%;
+  animation: au-shimmer 1.4s infinite;
+}
+@keyframes au-shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+/* Avatar */
+.au-card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  background: rgba(77, 70, 53, 0.3);
+  color: #D0C5AF;
+  letter-spacing: 0.5px;
+}
+.au-card__avatar[data-admin='true'] {
+  background: rgba(242, 202, 80, 0.15);
+  color: #F2CA50;
+}
+
+/* Info */
+.au-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.au-card__top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.au-card__name {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #E5E2E1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.au-card__badge {
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  background: rgba(77, 70, 53, 0.3);
+  color: rgba(208, 197, 175, 0.5);
+}
+.au-card__badge--admin {
+  background: rgba(242, 202, 80, 0.12);
+  color: #F2CA50;
+}
+
+.au-card__email {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: rgba(208, 197, 175, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.au-card__phone {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: rgba(208, 197, 175, 0.35);
+}
+
+/* Date */
+.au-card__date {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: rgba(208, 197, 175, 0.3);
+  flex-shrink: 0;
+  text-align: right;
+}

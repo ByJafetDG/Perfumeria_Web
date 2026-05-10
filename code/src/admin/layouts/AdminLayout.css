@@ -1,0 +1,10 @@
+.admin-layout {
+  min-height: 100dvh;
+  background: #0E0E0E;
+}
+
+.admin-layout__main {
+  padding-top: 64px;  /* altura del topbar */
+  padding-bottom: 80px; /* altura del bottom nav */
+  min-height: 100dvh;
+}

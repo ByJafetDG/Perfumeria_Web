@@ -1,0 +1,333 @@
+.addresses-page {
+  background: #131313;
+  padding-bottom: 100px;
+}
+
+.addresses-page--loading {
+  min-height: 100vh;
+  background: #131313;
+}
+
+.addresses-page__inner {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 32px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Header ── */
+.addresses-page__header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.addresses-page__header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.addresses-page__title {
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  font-size: 26px;
+  color: #E5E2E1;
+  margin: 0;
+}
+
+.addresses-page__add-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid rgba(242, 202, 80, 0.3);
+  padding: 8px 14px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #F2CA50;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.addresses-page__add-btn:hover {
+  background: rgba(242, 202, 80, 0.06);
+  border-color: rgba(242, 202, 80, 0.5);
+}
+
+.addresses-page__error {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #E57373;
+  margin: 0;
+  padding: 12px 16px;
+  background: rgba(229, 115, 115, 0.08);
+  border: 1px solid rgba(229, 115, 115, 0.2);
+}
+
+/* ── Empty state ── */
+.addresses-page__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 48px 0;
+  text-align: center;
+}
+
+.addresses-page__empty p {
+  font-family: 'Noto Serif', serif;
+  font-size: 17px;
+  color: #E5E2E1;
+  margin: 0;
+}
+
+.addresses-page__empty span {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #4D4740;
+  line-height: 20px;
+}
+
+/* ── List ── */
+.addresses-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* ── Address Card ── */
+.addrcard {
+  background: #1C1B1B;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.addrcard--default {
+  border-left-color: rgba(242, 202, 80, 0.5);
+}
+
+.addrcard__body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.addrcard__top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.addrcard__label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #E5E2E1;
+}
+
+.addrcard__badge {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 8px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #3C2F00;
+  background: #F2CA50;
+  padding: 2px 7px;
+}
+
+.addrcard__location {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #99907C;
+}
+
+.addrcard__street {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #D0C5AF;
+  line-height: 20px;
+}
+
+/* Actions row */
+.addrcard__actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(77, 70, 53, 0.12);
+}
+
+.addrcard__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: 1px solid rgba(77, 70, 53, 0.2);
+  cursor: pointer;
+  color: #99907C;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.addrcard__action:hover {
+  border-color: rgba(242, 202, 80, 0.3);
+  color: #F2CA50;
+}
+
+.addrcard__action--danger:hover {
+  border-color: rgba(229, 115, 115, 0.3);
+  color: #E57373;
+}
+
+.addrcard__confirm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 4px;
+}
+
+.addrcard__confirm span {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #E57373;
+}
+
+.addrcard__confirm-yes,
+.addrcard__confirm-no {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.addrcard__confirm-yes { color: #E57373; }
+.addrcard__confirm-no  { color: #99907C; }
+
+/* ── Form ── */
+.addr-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: #1C1B1B;
+  padding: 24px;
+}
+
+.addr-form__title {
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #E5E2E1;
+  margin: 0;
+}
+
+/* Predeterminada checkbox */
+.addr-form__default-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.addr-form__checkbox-wrap {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.addr-form__checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.addr-form__checkbox-custom {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  border: 1px solid rgba(77, 70, 53, 0.5);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.addr-form__checkbox:checked ~ .addr-form__checkbox-custom {
+  background: #F2CA50;
+  border-color: #F2CA50;
+}
+
+.addr-form__checkbox:checked ~ .addr-form__checkbox-custom::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #3C2F00;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.addr-form__default-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #D0C5AF;
+}
+
+/* Form actions */
+.addr-form__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addr-form__btn {
+  width: 100%;
+  padding: 16px 0;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.addr-form__btn--primary {
+  background: #D4AF37;
+  color: #3C2F00;
+}
+
+.addr-form__btn--primary:hover:not(:disabled) { background: #c9a230; }
+.addr-form__btn--primary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.addr-form__btn--ghost {
+  background: transparent;
+  border: 1px solid rgba(77, 70, 53, 0.3);
+  color: #99907C;
+}
+
+.addr-form__btn--ghost:hover {
+  border-color: rgba(77, 70, 53, 0.5);
+  color: #D0C5AF;
+}

@@ -1,0 +1,120 @@
+/* ── Contenedor principal ───────────────────────────────── */
+.cat-scroll {
+  width: 100%;
+  background: #131313;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  border-bottom: 1px solid rgba(77, 70, 53, 0.12);
+}
+
+/* ── Dropdown wrapper ───────────────────────────────────── */
+.cat-dropdown {
+  position: relative;
+  flex: 1;
+}
+
+/* ── Trigger button ─────────────────────────────────────── */
+.cat-dropdown__trigger {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #1C1B1B;
+  border: 1px solid rgba(77, 70, 53, 0.15);
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.cat-dropdown__trigger--active {
+  border-color: rgba(242, 202, 80, 0.4);
+}
+
+.cat-dropdown__trigger:hover {
+  border-color: rgba(77, 70, 53, 0.35);
+}
+
+.cat-dropdown__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(208, 197, 175, 0.5);
+  white-space: nowrap;
+}
+
+.cat-dropdown__value {
+  flex: 1;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #D0C5AF;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cat-dropdown__trigger--active .cat-dropdown__value {
+  color: #F2CA50;
+}
+
+.cat-dropdown__arrow {
+  flex-shrink: 0;
+  color: rgba(208, 197, 175, 0.5);
+  transition: transform 0.2s;
+}
+
+.cat-dropdown__arrow--open {
+  transform: rotate(180deg);
+}
+
+/* ── Menu desplegable ───────────────────────────────────── */
+.cat-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: #1C1B1B;
+  border: 1px solid rgba(77, 70, 53, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Items del menu ─────────────────────────────────────── */
+.cat-dropdown__item {
+  padding: 12px 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #D0C5AF;
+  text-align: left;
+  transition: background 0.15s, color 0.15s;
+  border-bottom: 1px solid rgba(77, 70, 53, 0.08);
+}
+
+.cat-dropdown__item:last-child {
+  border-bottom: none;
+}
+
+.cat-dropdown__item:hover {
+  background: #232323;
+  color: #F2CA50;
+}
+
+.cat-dropdown__item--active {
+  color: #F2CA50;
+  background: rgba(242, 202, 80, 0.06);
+}

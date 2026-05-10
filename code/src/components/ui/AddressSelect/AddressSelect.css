@@ -1,0 +1,168 @@
+.addr-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+
+.addr-field__label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #D0C5AF;
+}
+
+/* ── Trigger del dropdown ────────────────────────────────── */
+.addr-field__trigger {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(77, 70, 53, 0.4);
+  padding: 10px 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color 0.2s;
+}
+
+.addr-field__trigger--open {
+  border-color: rgba(242, 202, 80, 0.4);
+}
+
+.addr-field__trigger--disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.addr-field__value {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #E5E2E1;
+  text-align: left;
+}
+
+.addr-field__value--placeholder {
+  color: #525252;
+}
+
+.addr-field__chevron {
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.addr-field__chevron--open {
+  transform: rotate(180deg);
+}
+
+/* ── Panel desplegable ───────────────────────────────────── */
+.addr-field__menu {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #161616;
+  border: 1px solid rgba(77, 70, 53, 0.25);
+  border-top: none;
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.22s ease;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.addr-field__menu--open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.addr-field__menu-inner {
+  overflow-y: auto;
+  max-height: 220px;
+  overscroll-behavior: contain;
+}
+
+.addr-field__menu-inner::-webkit-scrollbar { width: 3px; }
+.addr-field__menu-inner::-webkit-scrollbar-track { background: transparent; }
+.addr-field__menu-inner::-webkit-scrollbar-thumb { background: rgba(77,70,53,0.4); border-radius: 2px; }
+
+/* ── Opción individual ───────────────────────────────────── */
+.addr-field__option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(77, 70, 53, 0.08);
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(229, 226, 225, 0.7);
+  transition: background 0.15s, color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.addr-field__menu--open .addr-field__option {
+  animation: optionReveal 0.25s ease forwards;
+  animation-delay: calc(var(--i) * 18ms + 60ms);
+}
+
+@keyframes optionReveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.addr-field__option:last-child { border-bottom: none; }
+
+.addr-field__option:hover {
+  background: rgba(242, 202, 80, 0.05);
+  color: #E5E2E1;
+}
+
+.addr-field__option--active {
+  color: #F2CA50;
+  background: rgba(242, 202, 80, 0.06);
+}
+
+.addr-field__check { flex-shrink: 0; }
+
+/* ── Input de texto (dirección específica) ───────────────── */
+.addr-field__input {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(77, 70, 53, 0.4);
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #E5E2E1;
+  padding: 10px 0;
+  -webkit-appearance: none;
+  transition: border-color 0.2s;
+}
+
+.addr-field__input:focus {
+  border-color: rgba(242, 202, 80, 0.4);
+}
+
+.addr-field__input::placeholder {
+  color: #525252;
+}

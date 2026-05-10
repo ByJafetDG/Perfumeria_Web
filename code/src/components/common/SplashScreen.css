@@ -1,0 +1,74 @@
+/* ── Fondo ───────────────────────────────────────────────── */
+.splash {
+  position: fixed;
+  inset: 0;
+  background: #0E0E0E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+
+  /* Sale: fade out al final */
+  animation: splashExit 0.6s ease-in 1.9s forwards;
+}
+
+/* ── Contenedor central ──────────────────────────────────── */
+.splash__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ── Logo ────────────────────────────────────────────────── */
+.splash__logo {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+
+  /* Entra: fade + scale desde abajo */
+  opacity: 0;
+  animation: logoReveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s forwards;
+}
+
+/* ── "777" ───────────────────────────────────────────────── */
+.splash__tag {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.55em;
+  color: rgba(242, 202, 80, 0.7);
+
+  /* Entra: fade + sube ligeramente */
+  opacity: 0;
+  animation: tagReveal 0.6s ease-out 0.75s forwards;
+}
+
+/* ── Keyframes ───────────────────────────────────────────── */
+@keyframes logoReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.93);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tagReveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes splashExit {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}

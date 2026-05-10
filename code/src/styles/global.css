@@ -1,0 +1,42 @@
+:root {
+  /* Colors */
+  --color-primary: #000;
+  --color-secondary: #fff;
+  --color-accent: #c9a96e;
+
+  /* Typography */
+  --font-base: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: #0E0E0E;
+  color: #fff;
+}
+
+/* ── Chip de promoción (compartido entre ProductCard, ProductDetail, Cart, Checkout) ── */
+.promo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+  line-height: 1.5;
+}

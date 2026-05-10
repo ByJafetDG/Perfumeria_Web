@@ -1,0 +1,172 @@
+.footer {
+  width: 100%;
+  background: #0a0a0a;
+  border-top: 1px solid rgba(242, 202, 80, 0.08);
+  padding-bottom: 88px; /* espacio para bottom nav en mobile */
+}
+
+.footer__inner {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 32px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* ── Branding ── */
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.footer__logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 4px;
+}
+
+.footer__store-name {
+  font-family: 'Noto Serif', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #E5E2E1;
+  letter-spacing: 0.04em;
+}
+
+.footer__slogan {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(242, 202, 80, 0.55);
+}
+
+.footer__desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #99907C;
+  margin: 4px 0 0;
+  max-width: 320px;
+}
+
+/* ── Sections ── */
+.footer__section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(242, 202, 80, 0.45);
+}
+
+/* ── Contact rows ── */
+.footer__contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #99907C;
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.5;
+}
+
+a.footer__contact-row:hover {
+  color: #E5E2E1;
+}
+
+.footer__contact-row svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: rgba(242, 202, 80, 0.5);
+}
+
+/* ── Social buttons ── */
+.footer__socials {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  color: #99907C;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.footer__social-btn:hover {
+  background: rgba(242, 202, 80, 0.1);
+  border-color: rgba(242, 202, 80, 0.2);
+  color: #F2CA50;
+}
+
+/* ── Copyright ── */
+.footer__bottom {
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer__copy {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.02em;
+}
+
+/* ── Desktop ── */
+@media (min-width: 1024px) {
+  .footer {
+    padding-bottom: 0;
+  }
+
+  .footer__inner {
+    max-width: 960px;
+    padding: 56px 48px 40px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 48px;
+    row-gap: 40px;
+  }
+
+  .footer__brand {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .footer__section:nth-of-type(1) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .footer__section:nth-of-type(2) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .footer__bottom {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
